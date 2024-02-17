@@ -1,7 +1,7 @@
 import { ExpoConfig, ConfigContext } from "@expo/config";
 
-const CLERK_PUBLISHABLE_KEY =
-  "pk_test_dmFsdWVkLWNsYW0tNDguY2xlcmsuYWNjb3VudHMuZGV2JA";
+const CLERK_PUBLISHABLE_KEY = process.env.CLERK_PUBLISHABLE_KEY;
+const EAS_PROJECT_ID = process.env.EAS_PROJECT_ID;
 
 const defineConfig = (_ctx: ConfigContext): ExpoConfig => ({
   name: "clerk-t3-turbo",
@@ -31,7 +31,7 @@ const defineConfig = (_ctx: ConfigContext): ExpoConfig => ({
   },
   extra: {
     eas: {
-      projectId: "2c0a04e7-b942-422b-9015-57ff514d858f",
+      projectId: EAS_PROJECT_ID,
     },
     CLERK_PUBLISHABLE_KEY,
   },
